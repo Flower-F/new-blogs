@@ -1,5 +1,3 @@
-import '../public/fonts/m-plus.css'
-
 import { ChakraProvider } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'

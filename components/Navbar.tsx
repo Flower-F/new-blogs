@@ -54,6 +54,9 @@ const NavBar = ({ path }: { path: string }) => {
           <LinkItem href="/blogs" path={path}>
             Blogs
           </LinkItem>
+          <LinkItem href="/notes" path={path}>
+            Notes
+          </LinkItem>
           <LinkItem
             target="_blank"
             path={path}
@@ -74,8 +77,11 @@ const NavBar = ({ path }: { path: string }) => {
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
               <MenuList>
-                <NextLink href="/blogs">
+                <NextLink href="/blogs" passHref>
                   <MenuItem>Blogs</MenuItem>
+                </NextLink>
+                <NextLink href="/notes">
+                  <MenuItem>Notes</MenuItem>
                 </NextLink>
                 <NextLink href="https://flower-f.github.io" passHref>
                   <MenuItem as={Link} target="_blank">View Source</MenuItem>

@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react'
+import type { NextPage } from 'next'
 import NextLink from 'next/link'
 import { IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 
@@ -9,7 +10,7 @@ import BioYear from '../components/BioYear'
 import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
-const IndexPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <Container>
       <Box

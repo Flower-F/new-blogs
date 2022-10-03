@@ -4,6 +4,7 @@ import type { Router } from 'next/router'
 import type { PropsWithChildren } from 'react'
 
 import NavBar from '../components/Navbar'
+import Footer from './Footer'
 
 const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => {
   return (
@@ -21,6 +22,7 @@ const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => 
         <Box mt={8}>
           {children}
         </Box>
+        <Footer />
       </Container>
     </Box>
   )

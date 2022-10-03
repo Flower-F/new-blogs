@@ -1,0 +1,33 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+  ],
+  "eslint.alwaysShowStatus": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "cSpell.words": [
+    "cloudboyhuang",
+    "Revitesse",
+    "Shenzhen",
+    "Takuya"
+  ]
+}

@@ -1,7 +1,15 @@
 {
-  "name": "flower-f",
-  "version": "0.1.0",
+  "name": "my-blogs",
+  "version": "0.0.1",
   "private": true,
+  "packageManager": "pnpm@7.12.2",
+  "license": "MIT",
+  "author": "Flower-F<https://github.com/flower-f>",
+  "description": "Flower-F's blogs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flower-F/new-blogs.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,16 +17,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.10",
+    "@chakra-ui/react": "^2.3.4",
+    "@chakra-ui/theme-tools": "^2.0.11",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.27.0",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "typescript": "4.8.4"
   }
 }

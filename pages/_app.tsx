@@ -1,8 +1,22 @@
-import '../styles/globals.css'
+import '../public/fonts/m-plus.css'
+
+import { ChakraProvider } from '@chakra-ui/react'
+import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Layout from '../components/Layout'
+import theme from '../libs/theme'
+
+const MyApp = ({ Component, pageProps, router }: AppProps) => {
+  return (
+    <ChakraProvider theme={theme}>
+      <Layout router={router}>
+        <AnimatePresence exitBeforeEnter initial>
+          <Component {...pageProps} />
+        </AnimatePresence>
+      </Layout>
+    </ChakraProvider>
+  )
 }
 
 export default MyApp

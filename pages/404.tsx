@@ -1,7 +1,7 @@
 import { Box, Button, Container, Divider, Heading, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <Container>
       <Heading as="h1">Not Found</Heading>
@@ -17,4 +17,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default NotFoundPage

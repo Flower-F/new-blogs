@@ -11,4 +11,4 @@ Built with:
 
 ## Credit
 
-This website is built based on [Takuya Matsuyama's website](https://github.com/craftzdog/craftzdog-homepage)
+This website is built based on [Takuya Matsuyama's website](https://github.com/craftzdog/craftzdog-homepage).

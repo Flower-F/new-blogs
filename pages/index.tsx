@@ -1,10 +1,11 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Box, Button, Container, Heading, Image, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Link, List, ListItem, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 
-import { BioSection } from '../components/BioSection'
-import { BioYear } from '../components/BioYear'
+import Avatar from '../components/Avatar'
+import BioSection from '../components/BioSection'
+import BioYear from '../components/BioYear'
 import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
@@ -24,16 +25,7 @@ const IndexPage = () => {
           <p>A Frontend Hobbyist and Developer</p>
         </Box>
         <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
-          <Image
-            borderColor="blackAlpha.800"
-            borderWidth={2}
-            borderStyle="solid"
-            maxWidth={100}
-            display="inline-block"
-            borderRadius="full"
-            src="/images/avatar.jpg"
-            alt="Profile Image"
-          />
+          <Avatar src="/images/avatar.jpg" alt="Avatar" width={100} height={100} />
         </Box>
       </Box>
 

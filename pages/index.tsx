@@ -59,9 +59,9 @@ const IndexPage: NextPage = () => {
           <NextLink href="https://github.com/Flower-F/revitesse-lite" passHref>
             <Link target="_blank">Revitesse</Link>
           </NextLink>.
-          In addition, you can try an App built by myself with Revitesse {' '}
+          In addition, you can try an App built by myself with Revitesse called {' '}
           <NextLink href="https://biaolegeqing.netlify.app" passHref>
-            <Link target="_blank">here</Link>
+            <Link target="_blank">Biaolegeqing</Link>
           </NextLink>.
         </Paragraph>
       </Section>

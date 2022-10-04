@@ -1,9 +1,9 @@
-import { Text, useColorModeValue } from '@chakra-ui/react'
+import { Link, Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import Link from 'next/link'
+import NextLink from 'next/link'
 
-const LogoBox = styled.a`
+const LogoBox = styled(Link)`
   font-weight: bold;
   font-size: 18px;
   display: inline-flex;
@@ -26,7 +26,7 @@ const Logo = () => {
   const logoImage = `/images/flower${useColorModeValue('', '-dark')}.png`
 
   return (
-    <Link href="/">
+    <NextLink href="/" passHref>
       <LogoBox>
         <Image src={logoImage} width={20} height={20} alt="logo" />
         <Text
@@ -39,7 +39,7 @@ const Logo = () => {
           Flower-F
         </Text>
       </LogoBox>
-    </Link>
+    </NextLink>
   )
 }
 

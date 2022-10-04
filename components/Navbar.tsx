@@ -21,7 +21,7 @@ const LinkItem = ({ href, path, children, ...props }: PropsWithChildren<LinkProp
   )
 }
 
-const MenuLinkItem = ({ href, path, children }: PropsWithChildren<LinkProps & { path: string; href: string }>) => {
+const MenuLinkItem = ({ href, path, children, target }: PropsWithChildren<LinkProps & { path: string; href: string }>) => {
   const active = path === href
   const activeBackgroundColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
@@ -30,6 +30,7 @@ const MenuLinkItem = ({ href, path, children }: PropsWithChildren<LinkProps & { 
       <MenuItem
         as={Link}
         path={path}
+        target={target}
         bg={active ? activeBackgroundColor : 'transparent'}
         _focus={{ background: active ? activeBackgroundColor : 'transparent' }}
       >
@@ -99,7 +100,9 @@ const NavBar = ({ path }: { path: string }) => {
                 <MenuLinkItem href="/" path={path}>About</MenuLinkItem>
                 <MenuLinkItem href="/blogs" path={path}>Blogs</MenuLinkItem>
                 <MenuLinkItem href="/notes" path={path}>Notes</MenuLinkItem>
-                <MenuLinkItem href="https://github.com/Flower-F/new-blogs" path={path}>View Source</MenuLinkItem>
+                <MenuLinkItem href="https://github.com/Flower-F/new-blogs" path={path} target="_blank">
+                  View Source
+                </MenuLinkItem>
               </MenuList>
             </Menu>
           </Box>

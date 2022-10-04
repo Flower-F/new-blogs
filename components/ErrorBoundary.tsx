@@ -1,5 +1,6 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Divider, Heading, Text } from '@chakra-ui/react'
 import Head from 'next/head'
+import NextLink from 'next/link'
 import type { PropsWithChildren } from 'react'
 import { Component } from 'react'
 
@@ -37,6 +38,14 @@ class ErrorBoundary extends Component<PropsWithChildren, ErrorBoundaryState> {
 
           <Heading as="h1">Unknown Error</Heading>
           <Text>Sorry, we met some unknown errors</Text>
+
+          <Divider my={3} />
+
+          <Box my={6} textAlign="center">
+            <NextLink href="/">
+              <Button colorScheme="teal">Back to home page</Button>
+            </NextLink>
+          </Box>
         </Container>
       )
     }

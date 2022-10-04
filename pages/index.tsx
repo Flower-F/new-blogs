@@ -14,7 +14,10 @@ const IndexPage: NextPage = () => {
   return (
     <Container>
       <Box
-        borderRadius="lg" textAlign="center" p={3} mb={6}
+        borderRadius="lg"
+        textAlign="center"
+        p={3}
+        mb={6}
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       >
         Hi, I&apos;am a frontend hobbyist and developer from China!
@@ -26,7 +29,15 @@ const IndexPage: NextPage = () => {
           <p>A Frontend Hobbyist and Developer</p>
         </Box>
         <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">
-          <Avatar src="/images/avatar.jpg" alt="Avatar" width={100} height={100} />
+          <Avatar
+            src="/images/avatar.jpg"
+            alt="Avatar"
+            width={100}
+            height={100}
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="/images/avatar-blur.jpg"
+          />
         </Box>
       </Box>
 

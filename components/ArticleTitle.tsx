@@ -11,7 +11,7 @@ const ArticleTitle = ({ article }: { article: ArticleTitleType }) => {
 
   return (
     <ListItem as={Stack} mb={6}>
-      <NextLink href={`${router.pathname}/${article.id}`} passHref>
+      <NextLink href={`${router.asPath}/${article.id}`} passHref>
         <Link>
           <Heading as="h4" size="md">{article.title}</Heading >
         </Link>

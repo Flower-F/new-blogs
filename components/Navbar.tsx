@@ -21,6 +21,24 @@ const LinkItem = ({ href, path, children, ...props }: PropsWithChildren<LinkProp
   )
 }
 
+const MenuLinkItem = ({ href, path, children }: PropsWithChildren<LinkProps & { path: string; href: string }>) => {
+  const active = path === href
+  const activeBackgroundColor = useColorModeValue('gray.100', 'whiteAlpha.100')
+
+  return (
+    <NextLink href={href} passHref>
+      <MenuItem
+        as={Link}
+        path={path}
+        bg={active ? activeBackgroundColor : 'transparent'}
+        _focus={{ background: active ? activeBackgroundColor : 'transparent' }}
+      >
+        {children}
+      </MenuItem>
+    </NextLink>
+  )
+}
+
 const NavBar = ({ path }: { path: string }) => {
   return (
     <Box
@@ -28,7 +46,7 @@ const NavBar = ({ path }: { path: string }) => {
       as="nav"
       w="100%"
       zIndex={1}
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('rgba(255, 255, 255, 0.2)', 'rgba(32, 32, 35, 0.5)')}
       style={{ backdropFilter: 'blur(10px)' }}
     >
       <Container
@@ -78,15 +96,10 @@ const NavBar = ({ path }: { path: string }) => {
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
               <MenuList>
-                <NextLink href="/blogs">
-                  <MenuItem as={Link}>Blogs</MenuItem>
-                </NextLink>
-                <NextLink href="/notes">
-                  <MenuItem as={Link}>Notes</MenuItem>
-                </NextLink>
-                <NextLink href="https://github.com/Flower-F/new-blogs" passHref>
-                  <MenuItem as={Link} target="_blank">View Source</MenuItem>
-                </NextLink>
+                <MenuLinkItem href="/" path={path}>About</MenuLinkItem>
+                <MenuLinkItem href="/blogs" path={path}>Blogs</MenuLinkItem>
+                <MenuLinkItem href="/notes" path={path}>Notes</MenuLinkItem>
+                <MenuLinkItem href="https://github.com/Flower-F/new-blogs" path={path}>View Source</MenuLinkItem>
               </MenuList>
             </Menu>
           </Box>

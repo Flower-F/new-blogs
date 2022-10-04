@@ -1,5 +1,6 @@
-import { Badge, Box, Heading, Image, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
+import { Badge, Box, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
@@ -27,6 +28,7 @@ SyntaxHighlighter.registerLanguage('rs', rs)
 SyntaxHighlighter.registerLanguage('bash', bash)
 
 const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
+  const router = useRouter()
   const badgeColorScheme = useColorModeValue('whatsapp', 'teal')
 
   const customRenderer = {
@@ -35,12 +37,15 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
       if (node.children[0].tagName === 'img') {
         const image = node.children[0]
         return (
-          <Image
-            src={`/images/notes/${article.id}/${image.properties.src}`}
-            alt={image.properties.alt || ''}
-            objectFit="cover"
-            loading="lazy"
-          />
+          <Box as="p" textAlign="center">
+            <Img
+              src={`/images${router.asPath}/${image.properties.src}`}
+              alt={image.properties.alt || ''}
+              loading="lazy"
+              placeholder="blur"
+              display="inline-block"
+            />
+          </Box>
         )
       }
       return <Text fontSize="md">{paragraph.children}</Text>

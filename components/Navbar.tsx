@@ -10,7 +10,7 @@ import ThemeToggleButton from '@/components/ThemeToggleButton'
 
 const LinkItem = ({ href, path, children, ...props }: PropsWithChildren<LinkProps & { path: string; href: string }>) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900')
 
   return (
     <NextLink href={href} passHref>

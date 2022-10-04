@@ -8,7 +8,7 @@ const Footer = () => {
         &copy;{new Date().getFullYear()} Flower-F. All Rights Reserved.
       </Box>
       <Box textAlign="center" opacity={0.8} fontSize="sm">
-        Built based on the {' '}
+        Built based on {' '}
         <NextLink href="https://www.craftz.dog" passHref>
           <Link target="_blank">Takuya Matsuyama&apos;s website</Link>
         </NextLink>.

@@ -2,8 +2,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
 
-import Layout from '../components/Layout'
-import theme from '../libs/theme'
+import Layout from '@/components/Layout'
+import theme from '@/libs/theme'
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
   return (

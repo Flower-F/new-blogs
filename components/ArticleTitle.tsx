@@ -1,23 +1,25 @@
 import { Badge, Heading, Link, ListItem, Stack, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
-import type { ArticleTitleType } from '../libs/article'
-import Date from './Date'
+import Date from '@/components//Date'
+import type { ArticleTitleType } from '@/libs/article'
 
-const ArticleTitle = ({ note }: { note: ArticleTitleType }) => {
+const ArticleTitle = ({ article }: { article: ArticleTitleType }) => {
+  const router = useRouter()
   const badgeColorScheme = useColorModeValue('blue', 'teal')
 
   return (
     <ListItem as={Stack} mb={6}>
-      <NextLink href={`/notes/${note.id}`} passHref>
+      <NextLink href={`${router.pathname}/${article.id}`} passHref>
         <Link>
-          <Heading as="h4" size="md">{note.title}</Heading >
+          <Heading as="h4" size="md">{article.title}</Heading >
         </Link>
       </NextLink>
       <Stack direction="row">
-        <Date dateString={note.date} />
+        <Date dateString={article.date} />
         {
-          note.keywords.map(keyword => (
+          article.keywords.map(keyword => (
             <Badge
               variant="solid"
               key={keyword}

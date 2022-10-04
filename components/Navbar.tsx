@@ -5,8 +5,8 @@ import NextLink from 'next/link'
 import type { PropsWithChildren } from 'react'
 import { IoLogoGithub } from 'react-icons/io'
 
-import Logo from './Logo'
-import ThemeToggleButton from './ThemeToggleButton'
+import Logo from '@/components/Logo'
+import ThemeToggleButton from '@/components/ThemeToggleButton'
 
 const LinkItem = ({ href, path, children, ...props }: PropsWithChildren<LinkProps & { path: string; href: string }>) => {
   const active = path === href
@@ -46,10 +46,11 @@ const NavBar = ({ path }: { path: string }) => {
         </Flex>
 
         <Stack
-          direction={{ base: 'column', md: 'row' }}
+          direction="row"
           display={{ base: 'none', md: 'flex' }}
-          width={{ base: 'full', md: 'auto' }}
-          alignItems="center" flexGrow={1} mt={{ base: 4, md: 0 }}
+          width="auto"
+          flexGrow={1}
+          mt={{ base: 4, md: 0 }}
         >
           <LinkItem href="/blogs" path={path}>
             Blogs
@@ -77,13 +78,13 @@ const NavBar = ({ path }: { path: string }) => {
             <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
               <MenuList>
-                <NextLink href="/blogs" passHref>
-                  <MenuItem>Blogs</MenuItem>
+                <NextLink href="/blogs">
+                  <MenuItem as={Link}>Blogs</MenuItem>
                 </NextLink>
                 <NextLink href="/notes">
-                  <MenuItem>Notes</MenuItem>
+                  <MenuItem as={Link}>Notes</MenuItem>
                 </NextLink>
-                <NextLink href="https://flower-f.github.io" passHref>
+                <NextLink href="https://github.com/Flower-F/new-blogs" passHref>
                   <MenuItem as={Link} target="_blank">View Source</MenuItem>
                 </NextLink>
               </MenuList>

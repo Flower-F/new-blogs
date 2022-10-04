@@ -14,7 +14,7 @@ import ts from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
 import theme from 'react-syntax-highlighter/dist/cjs/styles/prism/night-owl'
 import remarkGfm from 'remark-gfm'
 
-import type { ArticleDetailType } from '../libs/article'
+import type { ArticleDetailType } from '@/libs/article'
 
 SyntaxHighlighter.registerLanguage('js', js)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
@@ -26,7 +26,7 @@ SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('rs', rs)
 SyntaxHighlighter.registerLanguage('bash', bash)
 
-const ArticleDetail = ({ note }: { note: ArticleDetailType }) => {
+const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
   const badgeColorScheme = useColorModeValue('whatsapp', 'teal')
 
   const customRenderer = {
@@ -36,7 +36,7 @@ const ArticleDetail = ({ note }: { note: ArticleDetailType }) => {
         const image = node.children[0]
         return (
           <Image
-            src={`/images/notes/${note.id}/${image.properties.src}`}
+            src={`/images/notes/${article.id}/${image.properties.src}`}
             alt={image.properties.alt || ''}
             objectFit="cover"
             loading="lazy"
@@ -104,8 +104,8 @@ const ArticleDetail = ({ note }: { note: ArticleDetailType }) => {
 
   return (
     <Stack as="article" spacing={4}>
-      <Heading as="h1" size="lg">{note.title}</Heading>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={customRenderer} children={note.content} />
+      <Heading as="h1" size="lg">{article.title}</Heading>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={customRenderer} children={article.content} />
     </Stack>
   )
 }

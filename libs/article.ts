@@ -9,7 +9,7 @@ interface ArticleType {
 }
 
 /** 获取所有的文章 */
-export const getAllData = (folderPath: string) => {
+const getAllData = (folderPath: string) => {
   let fileNames: string[] = []
   if (fs.existsSync(folderPath)) {
     fileNames = fs.readdirSync(folderPath, { encoding: 'utf-8' })
@@ -41,7 +41,7 @@ export const getAllData = (folderPath: string) => {
 }
 
 /** 用于强制 Nextjs 进行预渲染 */
-export function getAllIds(folderPath: string) {
+const getAllIds = (folderPath: string) => {
   let fileNames: string[] = []
   if (fs.existsSync(folderPath)) {
     fileNames = fs.readdirSync(folderPath)
@@ -56,7 +56,7 @@ export function getAllIds(folderPath: string) {
 }
 
 /** 根据指定 id 获取文章内容 */
-export const getDataById = (folderPath: string, id: string) => {
+const getDataById = (folderPath: string, id: string) => {
   const filePath = path.join(folderPath, `${id}.md`)
   let fileContent = ''
   if (fs.existsSync(filePath)) {
@@ -76,13 +76,13 @@ export const getDataById = (folderPath: string, id: string) => {
 
 const notesPath = path.join(process.cwd(), 'notes')
 export const getAllNotesData = () => getAllData(notesPath)
-export const getNotesDataById = (id: string) => getDataById(notesPath, id)
-export const getAllNotesIds = () => getAllIds(notesPath)
+export const getNoteDataById = (id: string) => getDataById(notesPath, id)
+export const getAllNoteIds = () => getAllIds(notesPath)
 
 const blogsPath = path.join(process.cwd(), 'blogs')
 export const getAllBlogsData = () => getAllData(blogsPath)
-export const getBlogsDataById = (id: string) => getDataById(blogsPath, id)
-export const getAllBlogsIds = () => getAllIds(blogsPath)
+export const getBlogDataById = (id: string) => getDataById(blogsPath, id)
+export const getAllBlogIds = () => getAllIds(blogsPath)
 
 export interface ArticleTitleType extends ArticleType {
   id: string

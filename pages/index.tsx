@@ -4,11 +4,11 @@ import type { NextPage } from 'next'
 import NextLink from 'next/link'
 import { IoLogoGithub, IoLogoTwitter } from 'react-icons/io'
 
-import Avatar from '../components/Avatar'
-import BioSection from '../components/BioSection'
-import BioYear from '../components/BioYear'
-import Paragraph from '../components/Paragraph'
-import Section from '../components/Section'
+import Avatar from '@/components/Avatar'
+import BioSection from '@/components/BioSection'
+import BioYear from '@/components/BioYear'
+import Paragraph from '@/components/Paragraph'
+import Section from '@/components/Section'
 
 const IndexPage: NextPage = () => {
   return (
@@ -36,7 +36,7 @@ const IndexPage: NextPage = () => {
         </Heading>
         <Paragraph>
           Hi, I&apos;m a frontend developer in Shenzhen. I do well in frontend basic knowledge
-          such as React, Webpack, Vite, Atomic CSS, Next.js and so on. I dream of
+          such as React, Vue, Webpack, Vite, Atomic CSS, Next.js and so on. I dream of
           becoming an outstanding frontend developer, and I would like to do my best to contribute to
           the open source community. Now I have contributed to the {' '}
           <NextLink href="https://github.com/unocss/unocss" passHref>

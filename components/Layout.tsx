@@ -3,8 +3,8 @@ import Head from 'next/head'
 import type { Router } from 'next/router'
 import type { PropsWithChildren } from 'react'
 
-import NavBar from '../components/Navbar'
-import Footer from './Footer'
+import Footer from '@/components/Footer'
+import NavBar from '@/components/Navbar'
 
 const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => {
   return (
@@ -19,7 +19,7 @@ const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => 
       <NavBar path={router.route} />
 
       <Container maxW="container.md" pt={14}>
-        <Box mt={8}>
+        <Box mt={8} mb={4}>
           {children}
         </Box>
         <Footer />

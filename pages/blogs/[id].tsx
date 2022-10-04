@@ -4,25 +4,25 @@ import Head from 'next/head'
 
 import ArticleDetail from '@/components/ArticleDetail'
 import type { ArticleDetailType } from '@/libs/article'
-import { getAllNoteIds, getNoteDataById } from '@/libs/article'
+import { getAllBlogIds, getBlogDataById } from '@/libs/article'
 
-const NoteDetailPage: NextPage<{ note: ArticleDetailType }> = ({ note }) => {
+const BlogDetailPage: NextPage<{ blog: ArticleDetailType }> = ({ blog }) => {
   return (
     <>
       <Head>
-        <title>{note.title}</title>
-        <meta name="description" content={note.title} />
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.title} />
       </Head>
 
       <Container>
-        <ArticleDetail article={note} />
+        <ArticleDetail article={blog} />
       </Container>
     </>
   )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllNoteIds()
+  const paths = getAllBlogIds()
   return {
     paths,
     fallback: false,
@@ -30,16 +30,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  let note
+  let blog
   if (params && typeof params.id === 'string') {
-    note = getNoteDataById(params.id)
+    blog = getBlogDataById(params.id)
   }
   return {
     props: {
-      note,
+      blog,
     },
     revalidate: 10,
   }
 }
 
-export default NoteDetailPage
+export default BlogDetailPage

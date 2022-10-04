@@ -4,21 +4,21 @@ import Head from 'next/head'
 
 import ArticleTitle from '@/components/ArticleTitle'
 import type { ArticleTitleType } from '@/libs/article'
-import { getAllNotesData } from '@/libs/article'
+import { getAllBlogsData } from '@/libs/article'
 
-const AllNotesPage: NextPage<{ notes: ArticleTitleType[] }> = ({ notes }) => {
+const AllBlogsPage: NextPage<{ blogs: ArticleTitleType[] }> = ({ blogs }) => {
   return (
     <>
       <Head>
-        <title>Flower-F&apos;s notes</title>
-        <meta name="description" content="Flower-F's notes" />
+        <title>Flower-F&apos;s blogs</title>
+        <meta name="description" content="Flower-F's blogs" />
       </Head>
 
       <Container>
         <List>
           {
-            notes.map(note => (
-              <ArticleTitle article={note} key={note.id} />
+            blogs.map(blog => (
+              <ArticleTitle article={blog} key={blog.id} />
             ))
           }
         </List>
@@ -28,12 +28,12 @@ const AllNotesPage: NextPage<{ notes: ArticleTitleType[] }> = ({ notes }) => {
 }
 
 export async function getStaticProps() {
-  const allNotes = getAllNotesData()
+  const allBlogs = getAllBlogsData()
   return {
     props: {
-      notes: allNotes,
+      blogs: allBlogs,
     },
   }
 }
 
-export default AllNotesPage
+export default AllBlogsPage

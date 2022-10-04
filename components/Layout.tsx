@@ -10,9 +10,9 @@ const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => 
   return (
     <Box as="main" pb={8}>
       <Head>
-        <title>Flower-F&apos;s blogs</title>
-        <meta name="description" content="Flower-F's blogs" />
-        <meta name="keywords" content="blogs, frontend, code, software" />
+        <title>Flower-F&apos;s website</title>
+        <meta name="description" content="Flower-F's website" />
+        <meta name="keywords" content="blogs, notes, frontend, code, software" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -6,7 +6,9 @@
     "curly": ["error", "all"],
     "jsx-quotes": ["error", "prefer-double"],
     "sort-imports": "off",
+    "import/order": "off",
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "react/no-children-prop": "off"
   }
 }

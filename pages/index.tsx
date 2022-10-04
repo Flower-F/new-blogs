@@ -85,7 +85,7 @@ const IndexPage: NextPage = () => {
           Hobbies
         </Heading>
         <Paragraph>
-          Magic Cube, HipHop, Computer Network, Compilation Principle, Data Structure and Algorithm
+          Magic Cube, HipHop, Computer Network, Data Structure & Algorithm, Frontend Engineering
         </Paragraph>
       </Section>
 

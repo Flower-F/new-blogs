@@ -2,7 +2,7 @@ import { Badge, Heading, Link, ListItem, Stack, useColorModeValue } from '@chakr
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
-import Date from '@/components//Date'
+import Date from '@/components/Date'
 import type { ArticleTitleType } from '@/libs/article'
 
 const ArticleTitle = ({ article }: { article: ArticleTitleType }) => {
@@ -13,7 +13,7 @@ const ArticleTitle = ({ article }: { article: ArticleTitleType }) => {
     <ListItem as={Stack} mb={6}>
       <NextLink href={`${router.asPath}/${article.id}`} passHref>
         <Link>
-          <Heading as="h4" size="md">{article.title}</Heading >
+          <Heading as="h4" size="md" variant="article-title">{article.title}</Heading >
         </Link>
       </NextLink>
       <Stack direction="row">

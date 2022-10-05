@@ -14,7 +14,7 @@ const BlogDetailPage: NextPage<{ blog: ArticleDetailType }> = ({ blog }) => {
         <meta name="description" content={blog.title} />
       </Head>
 
-      <Container>
+      <Container maxW="800px">
         <ArticleDetail article={blog} />
       </Container>
     </>

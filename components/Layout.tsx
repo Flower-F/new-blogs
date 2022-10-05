@@ -21,7 +21,7 @@ const Layout = ({ children, router }: PropsWithChildren<{ router: Router }>) => 
 
         <NavBar path={router.route} />
 
-        <Container maxW="container.md" pt={14}>
+        <Container maxW="container.lg" pt={14}>
           <Box mt={8} mb={4}>
             {children}
           </Box>

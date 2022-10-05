@@ -52,7 +52,7 @@ const NavBar = ({ path }: { path: string }) => {
     >
       <Container
         display="flex"
-        maxW="container.md"
+        maxW="900px"
         flexWrap="wrap"
         textAlign="center"
         justifyContent="space-between"

@@ -46,7 +46,7 @@ const IndexPage: NextPage = () => {
           Intro
         </Heading>
         <Paragraph>
-          Hi, I&apos;m a frontend developer in Shenzhen. I do well in frontend basic knowledge
+          Hi, I&apos;m a frontend developer in Shenzhen. I do well in frontend development tools
           such as React, Vue, Webpack, Vite, Atomic CSS, Next.js and so on. I dream of
           becoming an outstanding frontend developer, and I would like to do my best to contribute to
           the open source community. Now I have contributed to the {' '}
@@ -96,7 +96,7 @@ const IndexPage: NextPage = () => {
           Hobbies
         </Heading>
         <Paragraph>
-          Magic Cube, HipHop, Computer Network, Data Structure & Algorithm, Frontend Engineering
+          Magic Cube, HipHop, Computer Network, Type Challenges, Data Structure & Algorithm, Frontend Engineering, Server Side Render
         </Paragraph>
       </Section>
 

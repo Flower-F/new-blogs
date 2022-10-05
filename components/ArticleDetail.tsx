@@ -1,4 +1,4 @@
-import { Badge, Box, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
+import { Badge, Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
@@ -15,6 +15,7 @@ import ts from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript'
 import theme from 'react-syntax-highlighter/dist/cjs/styles/prism/night-owl'
 import remarkGfm from 'remark-gfm'
 
+import Date from '@/components/Date'
 import type { ArticleDetailType } from '@/libs/article'
 
 SyntaxHighlighter.registerLanguage('js', js)
@@ -48,15 +49,15 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
           </Box>
         )
       }
-      return <Text fontSize="md">{paragraph.children}</Text>
+      return <Text fontSize="md" variant="article-text">{paragraph.children}</Text>
     },
     h2(h2: any) {
       const { children } = h2
-      return <Heading as="h2" size="md">{children}</Heading>
+      return <Heading as="h2" size="md" variant="section-title">{children}</Heading>
     },
     h3(h3: any) {
       const { children } = h3
-      return <Heading as="h3" size="sm">{children}</Heading>
+      return <Heading as="h3" size="sm" variant="section-title">{children}</Heading>
     },
     a(a: any) {
       const { node, href } = a
@@ -87,6 +88,7 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
             display="inline-flex"
             alignItems="center"
             mb="2px"
+            textTransform="initial"
           >
             {children}
           </Badge>
@@ -109,7 +111,10 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
 
   return (
     <Stack as="article" spacing={4}>
-      <Heading as="h1" size="lg">{article.title}</Heading>
+      <Heading as="h1" size="lg" variant="article-title">{article.title}</Heading>
+      <Flex justifyContent="flex-end">
+        <Date dateString={article.date} />
+      </Flex>
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={customRenderer} children={article.content} />
     </Stack>
   )

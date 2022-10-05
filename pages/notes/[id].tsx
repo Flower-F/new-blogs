@@ -14,7 +14,7 @@ const NoteDetailPage: NextPage<{ note: ArticleDetailType }> = ({ note }) => {
         <meta name="description" content={note.title} />
       </Head>
 
-      <Container>
+      <Container maxW="800px">
         <ArticleDetail article={note} />
       </Container>
     </>

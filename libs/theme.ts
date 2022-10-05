@@ -21,6 +21,9 @@ const components = {
         marginTop: 3,
         marginBottom: 4,
       },
+      'article-title': {
+        fontFamily: '\'Microsoft YaHei\', sans-serif',
+      },
     },
   },
   Link: {
@@ -28,6 +31,13 @@ const components = {
       color: mode('#3d7aed', '#ff63c3')(props),
       textUnderlineOffset: 3,
     }),
+  },
+  Text: {
+    variants: {
+      'article-text': {
+        fontFamily: '\'Microsoft YaHei\', sans-serif',
+      },
+    },
   },
 }
 

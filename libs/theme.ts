@@ -42,7 +42,7 @@ const components = {
 }
 
 const fonts = {
-  heading: '\'M PLUS Rounded 1c\', sans-serif',
+  heading: '\'Arial\', sans-serif',
 }
 
 const colors = {

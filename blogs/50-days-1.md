@@ -4,9 +4,9 @@ date: '2022-10-05'
 keywords: ['50 days']
 ---
 
-今天是 [50 天计划](https://momohanbao.com/notes/50-days-plan)的第 1 天。今天的目标很简单，就是搭建环境，然后完成第一个项目 Expanding Cards。
+今天是 [50 天计划](https://yunhan.fun/notes/50-days-plan)的第 1 天。今天的目标很简单，就是搭建环境，然后完成第一个项目 Expanding Cards。
 
-## 创建项目
+## 准备工作
 
 这里使用 [Revitesse-Lite](https://github.com/Flower-F/revitesse-lite) 作为启动模板。Revitesse 基本集成了 React + Vite 的一些最佳实践，免去了配置环节。
 
@@ -15,9 +15,10 @@ $ npx degit flower-f/revitesse-lite 50days
 $ cd 50days
 $ git init
 $ pnpm i
+$ pnpm dev
 ```
 
-因为 Revitesse 使用了动态路由的工具，所以只需要修改目录结构就能自动生成路由。将项目目录结构更改为：
+因为 Revitesse 使用了动态路由，所以只需要修改目录结构就能自动生成路由。将项目目录结构更改为：
 
 ```plain
 pages
@@ -30,18 +31,18 @@ pages
 在 `pages/day/1/index.tsx` 中写入以下内容：
 
 ```tsx
-const ExpandingCards = () => {
+const ExpandingCardsPage = () => {
   return (
-    <div>ExpandingCards</div>
+    <div>hello world</div>
   )
 }
 
-export default ExpandingCards
+export default ExpandingCardsPage
 ```
 
 此时访问路由 [http://127.0.0.1:5173/day/1](http://127.0.0.1:5173/day/1)，可以看到一个 hello world。
 
-## 页面开发
+## 项目开发
 
 可以先看一下[页面效果](https://50projects50days-react.netlify.app/day/1)，对大体内容有个基本了解。
 
@@ -82,26 +83,28 @@ const originalCardList: ItemType[] = [
   },
 ]
 
-const ExpandingCards = () => {
+const ExpandingCardsPage = () => {
   return (
     <div flex items-center justify-center>
-      <div flex items-center className="w-90%">
+      <ul flex items-center className="w-90%">
         {
           originalCardList.map((cardItem, index) => (
-            <button key={index} relative mx-2>
-              <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
-              <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
-                {cardItem.title}
-              </h3>
-            </button>
+            <li mx-2 relative key={index}>
+              <button>
+                <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
+                <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
+                  {cardItem.title}
+                </h3>
+              </button>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
   )
 }
 
-export default ExpandingCards
+export default ExpandingCardsPage
 ```
 
 现在布局效果已经基本出来了。我们首先做一件事情，把列表渲染的 item 部分抽出来。
@@ -109,25 +112,27 @@ export default ExpandingCards
 ```tsx
 const CardItem = ({ cardItem }: { cardItem: ItemType } & Partial<JSX.IntrinsicElements['button']>) => {
   return (
-    <button relative mx-2>
-      <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
-      <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
-        {cardItem.title}
-      </h3>
-    </button>
+    <li relative mx-2>
+      <button>
+        <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
+        <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
+          {cardItem.title}
+        </h3>
+      </button>
+    </li>
   )
 }
 
 const ExpandingCardsPage = () => {
   return (
     <div flex items-center justify-center>
-      <div flex items-center className="w-90%">
+      <ul flex items-center className="w-90%">
         {
           originalCardList.map((cardItem, index) => (
             <CardItem cardItem={cardItem} key={index} />
           ))
         }
-      </div>
+      </ul>
     </div>
   )
 }
@@ -139,12 +144,14 @@ const ExpandingCardsPage = () => {
 ```tsx
 const CardItem = ({ cardItem, expand, onClick }: { cardItem: ItemType; expand: boolean } & Partial<JSX.IntrinsicElements['button']>) => {
   return (
-    <button relative mx-2 basis-0 className={expand ? 'grow-5' : 'grow-0.6'} onClick={onClick}>
-      <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
-      <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
-        {cardItem.title}
-      </h3>
-    </button>
+    <li relative mx-2 basis-0 className={expand ? 'grow-5' : 'grow-0.6'}>
+      <button onClick={onClick}>
+        <img src={cardItem.source} alt={cardItem.title} h-80vh object-cover rounded-50px />
+        <h3 absolute left-20px bottom-40px text="xl left white" font-extrabold>
+          {cardItem.title}
+        </h3>
+      </button>
+    </li>
   )
 }
 
@@ -153,7 +160,7 @@ const ExpandingCardsPage = () => {
 
   return (
     <div flex items-center justify-center>
-      <div flex items-center className="w-90%">
+      <ul flex items-center className="w-90%">
         {
           originalCardList.map((cardItem, index) => (
             <CardItem
@@ -164,7 +171,7 @@ const ExpandingCardsPage = () => {
             />
           ))
         }
-      </div>
+      </ul>
     </div>
   )
 }
@@ -183,6 +190,6 @@ export default defineConfig({
 ```
 
 此时基本的效果已经实现，但是还有些细节需要调整，比如说文字部分，当卡片收缩的时候应该隐藏文字，这也很简单。给 h3 标签添加上 
-`className={expand ? 'visible' : 'invisible'}` 即可，当然 visible 和 invisible 也都需要添加到 safelist 中。
+`className={expand ? 'op100' : 'op0'}` 即可，当然 op100 和 op0 也都需要添加到 safelist 中。
 
 最后只需要把一些动画参数添加上去，以及处理一下响应式即可，具体的细节可以参考[源码](https://github.com/Flower-F/50projects50days/blob/main/src/pages/day/1/index.tsx)。

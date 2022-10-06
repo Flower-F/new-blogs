@@ -32,10 +32,11 @@ const Logo = () => {
         <Text
           color={useColorModeValue('gray.800', 'whiteAlpha.900')}
           fontWeight="bold"
+          fontFamily="'M PLUS Rounded 1c', sans-serif"
           letterSpacing={0.2}
           ml={1}
         >
-          Flower-F
+          YunHan
         </Text>
       </LogoBox>
     </NextLink>

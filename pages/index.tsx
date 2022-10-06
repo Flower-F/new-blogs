@@ -25,7 +25,7 @@ const IndexPage: NextPage = () => {
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
-          <Heading as="h2" variant="page-title">Flower-F</Heading>
+          <Heading as="h2" variant="page-title">YunHan</Heading>
           <p>A Frontend Hobbyist and Developer</p>
         </Box>
         <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} textAlign="center">

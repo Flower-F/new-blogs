@@ -4,7 +4,7 @@ date: '2022-10-05'
 keywords: ['50 days']
 ---
 
-今天是 [50 天计划](https://momohanbao.com/notes/50-days-plan)的第 1 天。今天的目标很简单，就是搭建环境，然后完成第一个项目。
+今天是 [50 天计划](https://momohanbao.com/notes/50-days-plan)的第 1 天。今天的目标很简单，就是搭建环境，然后完成第一个项目 Expanding Cards。
 
 ## 创建项目
 

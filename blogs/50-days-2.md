@@ -8,9 +8,9 @@ keywords: ['50 days']
 
 今天是 [50 天计划](https://yunhan.fun/notes/50-days-plan)的第 2 天。今天要完成的是第二个项目 Progress Steps。可以先看一下[页面效果](https://50projects50days-react.netlify.app/day/2)，对大体内容有个基本了解。
 
-首先在 pages 目录下新建文件夹 2，并添加 `index.tsx` 文件。此时页面结构如下：
+首先在 pages/day 目录下新建文件夹 2，并添加 `index.tsx` 文件。此时页面结构如下：
 
-```plain
+```bash
 pages
   |-- index.tsx
   |-- day

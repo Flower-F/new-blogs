@@ -18,9 +18,9 @@ $ pnpm i
 $ pnpm dev
 ```
 
-因为 Revitesse 使用了动态路由，所以只需要修改目录结构就能自动生成路由。将项目目录结构更改为：
+因为 Revitesse 使用了动态路由，所以只需要修改目录结构就能自动生成路由。在 pages 目录下新建 day 目录，day 目录下再新建文件夹 1，并添加 `index.tsx` 文件。此时页面结构如下：
 
-```plain
+```bash
 pages
   |-- index.tsx
   |-- day

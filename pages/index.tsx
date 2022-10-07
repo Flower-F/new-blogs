@@ -46,7 +46,7 @@ const IndexPage: NextPage = () => {
           Intro
         </Heading>
         <Paragraph>
-          Hi, I&apos;m a frontend developer in Shenzhen. I enjoy frontend development, and I specialize in some
+          Hi, I&apos;m YunHan, a frontend developer in Shenzhen. I enjoy frontend development, and I specialize in some
           frontend framework such as React, Vue, Webpack, Vite, Atomic CSS, Next.js and so on. I dream of
           becoming an outstanding frontend developer, and I would like to do my best to contribute to
           the open source community. Now I have contributed to the {' '}

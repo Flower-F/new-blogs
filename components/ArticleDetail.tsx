@@ -2,7 +2,7 @@ import { Badge, Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Tex
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import cpp from 'react-syntax-highlighter/dist/cjs/languages/prism/cpp'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
@@ -101,6 +101,7 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
           style={theme}
           language={language}
           children={children}
+          showLineNumbers={true}
           borderStyle="solid"
           borderWidth={2}
           borderColor="chakra-border-color"

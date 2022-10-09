@@ -1,7 +1,7 @@
 ---
 title: '动态规划从入门到入土（一）'
 date: '2022-10-09'
-keywords: ['50 days']
+keywords: ['Algorithm']
 ---
 
 本文为[《labuladong 的算法小抄》](https://labuladong.github.io/algo/)的阅读笔记。
@@ -289,12 +289,12 @@ else:
 
 本题中状态就是指针 i 和 j 的位置，选择就是指 skip、insert、delete、replace 这 4 种操作。
 
-这里 可以得出 dp[i-1][j-1] 表示替换操作，dp[i-1][j] 表示删除操作，dp[i][j-1] 表示插入操作，原因如下：
+这里 可以得出 `dp[i-1][j-1]` 表示替换操作，`dp[i-1][j]` 表示删除操作，`dp[i][j-1]` 表示插入操作，原因如下：
 
-以 word1 为 "horse"，word2 为 "ros"，且 dp[5][3] 为例，即要将 word1 的前 5 个字符转换为 word2 的前 3 个字符，也就是将 horse 转换为 ros，此时有：
-1. dp[i-1][j-1]，即先将 word1 的前 4 个字符 hors 转换为 word2 的前 2 个字符 ro，然后将第五个字符 word1[4]（因为下标基数以 0 开始） 由 e 替换为 s（即替换为 word2 的第三个字符，word2[2]）
-2. dp[i][j-1]，即先将 word1 的前 5 个字符 horse 转换为 word2 的前 2 个字符 ro，然后在末尾补充一个 s，即插入操作
-3. dp[i-1][j]，即先将 word1 的前 4 个字符 hors 转换为 word2 的前 3 个字符 ros，然后删除 word1 的第 5 个字符
+以 word1 为 "horse"，word2 为 "ros"，且 `dp[5][3]` 为例，即要将 word1 的前 5 个字符转换为 word2 的前 3 个字符，也就是将 horse 转换为 ros，此时有：
+1. `dp[i-1][j-1]`，即先将 word1 的前 4 个字符 hors 转换为 word2 的前 2 个字符 ro，然后将第五个字符 `word1[4]`（因为下标基数以 0 开始） 由 e 替换为 s（即替换为 word2 的第三个字符，`word2[2]`）
+2. `dp[i][j-1]`，即先将 word1 的前 5 个字符 horse 转换为 word2 的前 2 个字符 ro，然后在末尾补充一个 s，即插入操作
+3. `dp[i-1][j]`，即先将 word1 的前 4 个字符 hors 转换为 word2 的前 3 个字符 ros，然后删除 word1 的第 5 个字符
 
 最后综合上面的分析，我们可以得到以下代码：
 

@@ -28,7 +28,7 @@ SyntaxHighlighter.registerLanguage('bash', bash)
 
 const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
   const router = useRouter()
-  const badgeColorScheme = useColorModeValue('whatsapp', 'teal')
+  const badgeColorScheme = useColorModeValue('blackAlpha', 'gray')
 
   const customRenderer = {
     p(paragraph: any) {
@@ -85,8 +85,11 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
             colorScheme={badgeColorScheme}
             display="inline-flex"
             alignItems="center"
-            mb="2px"
+            fontSize="14px"
             textTransform="initial"
+            fontFamily="\'Microsoft YaHei\', sans-serif"
+            fontWeight="semibold"
+            marginBottom="2px"
           >
             {children}
           </Badge>

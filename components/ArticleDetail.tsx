@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
-import cpp from 'react-syntax-highlighter/dist/cjs/languages/prism/cpp'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
@@ -22,7 +21,6 @@ SyntaxHighlighter.registerLanguage('js', js)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
 SyntaxHighlighter.registerLanguage('css', css)
 SyntaxHighlighter.registerLanguage('scss', scss)
-SyntaxHighlighter.registerLanguage('cpp', cpp)
 SyntaxHighlighter.registerLanguage('ts', ts)
 SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('rs', rs)
@@ -53,11 +51,11 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
     },
     h2(h2: any) {
       const { children } = h2
-      return <Heading as="h2" size="md" variant="section-title">{children}</Heading>
+      return <Heading as="h2" size="md" variant="article-title">{children}</Heading>
     },
     h3(h3: any) {
       const { children } = h3
-      return <Heading as="h3" size="sm" variant="section-title">{children}</Heading>
+      return <Heading as="h3" size="sm" variant="article-title">{children}</Heading>
     },
     a(a: any) {
       const { node, href } = a
@@ -73,11 +71,11 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
     },
     ul(ul: any) {
       const { children } = ul
-      return <UnorderedList pl={6}>{children}</UnorderedList>
+      return <UnorderedList pl={5}>{children}</UnorderedList>
     },
     li(li: any) {
       const { children } = li
-      return <ListItem>{children}</ListItem>
+      return <ListItem mt="1.5">{children}</ListItem>
     },
     code(code: any) {
       const { className, children } = code // language-js
@@ -101,7 +99,6 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
           style={theme}
           language={language}
           children={children}
-          showLineNumbers={true}
           borderStyle="solid"
           borderWidth={2}
           borderColor="chakra-border-color"

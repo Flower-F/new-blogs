@@ -85,11 +85,12 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
             colorScheme={badgeColorScheme}
             display="inline-flex"
             alignItems="center"
+            whiteSpace="normal"
             fontSize="14px"
             textTransform="initial"
             fontFamily="\'Microsoft YaHei\', sans-serif"
             fontWeight="semibold"
-            marginBottom="2px"
+            my="2px"
           >
             {children}
           </Badge>

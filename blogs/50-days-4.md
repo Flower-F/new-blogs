@@ -6,7 +6,7 @@ keywords: ['50 days']
 
 ## 准备工作
 
-今天是 [50 天计划](https://yunhan.fun/notes/50-days-plan)的第 4 天。今天要完成的是第四个项目 Hidden Search。可以先看一下[页面效果](https://50projects50days-react.netlify.app/day/4)，对大体内容有个基本了解。
+今天是 [50 天计划](https://yunhan.fun/notes/50-days-plan)的第 4 天。今天要完成的是第 4 个项目 Hidden Search。可以先看一下[页面效果](https://50projects50days-react.netlify.app/day/4)，对大体内容有个基本了解。
 
 首先在 pages/day 目录下新建文件夹 4，并添加 `index.tsx` 文件。此时页面结构如下：
 

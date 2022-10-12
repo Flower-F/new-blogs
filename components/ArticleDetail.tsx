@@ -90,7 +90,7 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
             textTransform="initial"
             fontFamily="\'Microsoft YaHei\', sans-serif"
             fontWeight="semibold"
-            my="2px"
+            mb="1px"
           >
             {children}
           </Badge>

@@ -14,7 +14,7 @@ Built with:
 
 This website is built based on [Takuya Matsuyama's website](https://www.craftz.dog/).
 
-## TODO
+## Todo
 
 - [ ] Markdown Navbar
 - [ ] Tags Page

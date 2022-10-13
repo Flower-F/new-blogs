@@ -10,7 +10,7 @@ keywords: ['Algorithm']
 
 ```ts
 function generateMatrix(n: number): number[][] {
-	const res = new Array(n).fill(null).map(() => new Array<number>(n).fill(0))
+  const res = new Array(n).fill(null).map(() => new Array<number>(n).fill(0))
   const direction = [[0, 1], [1, 0], [0, -1], [-1, 0]]
   let row = 0, col = 0
   let directionIndex = 0

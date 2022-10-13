@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
@@ -28,7 +28,8 @@ SyntaxHighlighter.registerLanguage('bash', bash)
 
 const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
   const router = useRouter()
-  const badgeColorScheme = useColorModeValue('blackAlpha', 'gray')
+  const tagTextColorScheme = useColorModeValue('blackAlpha.800', 'gray.200')
+  const tagBackgroundColorScheme = useColorModeValue('blackAlpha.100', 'whiteAlpha.300')
 
   const customRenderer = {
     p(paragraph: any) {
@@ -81,19 +82,18 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
       const { className, children } = code // language-js
       if (!className) {
         return (
-          <Badge
-            colorScheme={badgeColorScheme}
-            display="inline-flex"
-            alignItems="center"
-            whiteSpace="normal"
-            fontSize="14px"
-            textTransform="initial"
+          <Text
+            as="span"
+            color={tagTextColorScheme}
+            backgroundColor={tagBackgroundColorScheme}
             fontFamily="\'Microsoft YaHei\', sans-serif"
-            fontWeight="semibold"
-            mb="1px"
+            fontWeight="bold"
+            fontSize="14px"
+            px="4px"
+            borderRadius="sm"
           >
             {children}
-          </Badge>
+          </Text>
         )
       }
       const language = className.split('-')[1] // js

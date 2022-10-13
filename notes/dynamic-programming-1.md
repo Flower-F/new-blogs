@@ -1,5 +1,5 @@
 ---
-title: '动态规划从入门到入土（一）'
+title: '动态规划（一）'
 date: '2022-10-09'
 keywords: ['Algorithm']
 ---

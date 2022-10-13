@@ -13,3 +13,10 @@ Built with:
 ## Credit
 
 This website is built based on [Takuya Matsuyama's website](https://www.craftz.dog/).
+
+## TODO
+
+- [ ] Markdown Navbar
+- [ ] Tags Page
+- [ ] Articles Pagination
+- [ ] I18N

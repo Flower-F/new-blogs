@@ -16,6 +16,7 @@ This website is built based on [Takuya Matsuyama's website](https://www.craftz.d
 
 ## Todo
 
+- [ ] Next Article & Prev Article
 - [ ] Markdown Navbar
 - [ ] Tags Page
 - [ ] Articles Pagination

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Text, UnorderedList, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Heading, Img, Link, ListItem, OrderedList, Stack, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, UnorderedList, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
@@ -52,11 +52,11 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
     },
     h2(h2: any) {
       const { children } = h2
-      return <Heading as="h2" size="md" variant="article-title">{children}</Heading>
+      return <Heading as="h2" size="lg" variant="article-title">{children}</Heading>
     },
     h3(h3: any) {
       const { children } = h3
-      return <Heading as="h3" size="sm" variant="article-title">{children}</Heading>
+      return <Heading as="h3" size="md" variant="article-title">{children}</Heading>
     },
     a(a: any) {
       const { node, href } = a
@@ -77,6 +77,48 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
     li(li: any) {
       const { children } = li
       return <ListItem mt="1.5">{children}</ListItem>
+    },
+    table(table: any) {
+      const { children } = table
+      return (
+        <TableContainer>
+          <Table>
+            {children}
+          </Table>
+        </TableContainer>
+      )
+    },
+    thead(thead: any) {
+      const { children } = thead
+      return <Thead>{children}</Thead>
+    },
+    tbody(tbody: any) {
+      const { children } = tbody
+      return <Tbody>{children}</Tbody>
+    },
+    tfoot(tfoot: any) {
+      const { children } = tfoot
+      return <Tfoot>{children}</Tfoot>
+    },
+    tr(tr: any) {
+      const { children } = tr
+      return <Tr>{children}</Tr>
+    },
+    th(th: any) {
+      const { children } = th
+      return (
+        <Th
+          borderColor="gray.400"
+          fontSize="1rem"
+          fontFamily="\'Microsoft YaHei\', sans-serif"
+        >
+          {children}
+        </Th>
+      )
+    },
+    td(td: any) {
+      const { children } = td
+      return <Td borderColor="gray.400">{children}</Td>
     },
     code(code: any) {
       const { className, children } = code // language-js
@@ -113,7 +155,7 @@ const ArticleDetail = ({ article }: { article: ArticleDetailType }) => {
 
   return (
     <Stack as="article" spacing={4}>
-      <Heading as="h1" size="lg" variant="article-title">{article.title}</Heading>
+      <Heading as="h1" size="xl" variant="article-title">{article.title}</Heading>
       <Flex justifyContent="flex-end">
         <Date dateString={article.date} />
       </Flex>

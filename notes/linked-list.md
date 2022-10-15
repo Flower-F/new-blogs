@@ -29,7 +29,7 @@ function removeElements(head: ListNode | null, val: number): ListNode | null {
 
 ## [设计链表](https://leetcode.cn/problems/design-linked-list/)
 
-这是一道非常非常复杂的模拟题，甚至比 LRU 还要复杂得多，主要体验在太容易出错了，我也因为一些细节问题 debug 了挺长时间。题目要求我们可以在单链表和双链表之间做选择，很显然这里选择双链表会更合适，可以保证时间复杂度更小。因为对于尾部的插入我们可以直接利用虚拟尾节点实现 O(1) 插入；对于中间部分的节点插入，我们也可以计算出该节点的遍历方向，靠左就从左向右遍历，靠右就从右向左遍历，保证了最小遍历次数。但是对于节点的插入，依然是很容易出错的，这里建议是使用画图的方法，确保不要写漏其中的某个关系。以 `addAtIndex` 函数为例：
+这是一道非常非常复杂的模拟题，甚至比 LRU 还要复杂得多，复杂主要体现在太容易出错了，我也因为一些细节问题 debug 了挺长时间。题目要求我们可以在单链表和双链表之间做选择，很显然这里选择双链表会更合适，可以保证时间复杂度更小。因为对于尾部的插入我们可以直接利用虚拟尾节点实现 O(1) 插入；对于中间部分的节点插入，我们也可以计算出该节点的遍历方向，靠左就从左向右遍历，靠右就从右向左遍历，保证了最小遍历次数。但是对于节点的插入，依然是很容易出错的，这里建议是使用画图的方法，确保不要写漏其中的某个关系。以 `addAtIndex` 函数为例：
 
 ![addAtIndex](add-at-index.png)
 
@@ -127,9 +127,10 @@ class MyLinkedList {
 
 ## [反转链表](https://leetcode.cn/problems/reverse-linked-list/)
 
-反转链表有双指针和递归两种写法，都需要掌握。双指针的解法比较容易理解，但是递归的方法会让人比较懵。我们可以选择从双指针解法推导出递归的解法。具体怎么推导有点玄学，可以看[代码随想录的视频讲解](https://www.bilibili.com/video/BV1nB4y1i7eL)。
+反转链表有双指针和递归两种写法，都需要掌握。双指针的解法比较容易理解，但是递归的方法会让人比较懵。我们可以选择从双指针解法推导出递归的解法。具体怎么推导有点玄学，文字很难说明清楚，可以看[代码随想录的视频讲解](https://www.bilibili.com/video/BV1nB4y1i7eL)。
 
 ```ts
+// 双指针
 function reverseList(head: ListNode | null): ListNode | null {
   let prev = null, cur = head
   // 边界条件，当 cur 为 null 时，pre（cur 的前一个节点）刚好指向链表尾部，也就是反转之后的头节点
@@ -145,6 +146,7 @@ function reverseList(head: ListNode | null): ListNode | null {
 ```
 
 ```ts
+// 递归
 function reverseList(head: ListNode | null): ListNode | null {
   return helper(null, head)
   

@@ -20,4 +20,3 @@ This website is built based on [Takuya Matsuyama's website](https://www.craftz.d
 - [ ] Markdown Navbar
 - [ ] Tags Page
 - [ ] Articles Pagination
-- [ ] I18N

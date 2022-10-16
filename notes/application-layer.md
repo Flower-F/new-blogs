@@ -1,6 +1,6 @@
 ---
 title: '应用层'
-date: '2022-10-15'
+date: '2022-10-16'
 keywords: ['Computer Network']
 ---
 
@@ -343,7 +343,7 @@ DNS 劫持即域名劫持，是通过将原域名对应的 IP 地址进行替换
 
 ### 前端可以如何加快 DNS 解析
 
-1. DNS Prefetch
+- DNS Prefetch
 
 `X-DNS-Prefetch-Control` 头控制着浏览器的 DNS 预读取功能。 DNS 预读取是一项使浏览器主动去执行域名解析的功能，其范围包括文档的所有链接，无论是图片的、CSS 的，还是 JavaScript 等其他用户能够点击的 URL。因为预读取会在后台执行，所以 DNS 很可能在链接对应的东西出现之前就已经解析完毕。这能够减少用户点击链接时的延迟。
 
@@ -364,7 +364,7 @@ DNS 劫持即域名劫持，是通过将原域名对应的 IP 地址进行替换
 
 注意：dns-prefetch 仅对跨域域上的 DNS 查找有效，因此请避免使用它来指向自己的站点或域名。这是因为，当浏览器看到提示时，背后的 IP 已经被解析完成。
 
-2. Preconnect
+- Preconnect
 
 最佳实践：考虑将 dns-prefetch 与 preconnect 配对。尽管 dns-prefetch 仅执行 DNS 查找，但 preconnect 会建立与服务器的连接。如果站点是通过 HTTPS 服务的，则此过程包括 DNS 解析，建立 TCP 连接以及执行 TLS 握手。将两者结合起来可提供进一步减少跨域请求的感知延迟的机会。使用方法为：
 

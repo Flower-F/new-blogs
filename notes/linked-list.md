@@ -189,7 +189,7 @@ function swapPairs(head: ListNode | null): ListNode | null {
     p.next = p.next.next // dummy 指向节点 2
     p.next.next = temp // 节点 2 指向节点 1
     temp.next = temp1 // 节点 1 指向节点 3
-    p = p.next.next // 移动指针
+    p = p.next.next // 移动 dummy（此时节点 1 和节点 2 位置已经变换，但是并不影响我们继续遍历）
   }
   return dummyHead.next
 }
@@ -276,7 +276,7 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
 
 相遇时：slow 指针走过的节点数为: `x + y`， fast 指针走过的节点数：`x + y + n (y + z)`，n 为 fast 指针在环内走了 n 圈才遇到 slow 指针，`(y+z)` 为一圈内节点的个数。
 
-因为 fast 指针一步走两个节点，slow 指针一步走一个节点， 所以 fast 指针走过的节点数 = slow 指针走过的节点数 * 2，也就是
+因为 fast 指针一步走两个节点，slow 指针一步走一个节点， 所以 `fast 指针走过的节点数 = slow 指针走过的节点数 * 2`，也就是
 
 ```bash
 (x + y) * 2 = x + y + n (y + z)
@@ -306,7 +306,7 @@ x = (n - 1) (y + z) + z
 x = z
 ```
 
-这就意味着，从头结点 index1 出发一个指针，从相遇节点 index2 也出发一个指针，这两个指针每次只走一个节点，那么当这两个指针相遇的时候就是环形入口的节点。那么 n 如果大于 1 是什么情况呢，就是 fast 指针在环形转 n 圈之后才遇到 slow 指针。其实这种情况和 n 为 1 的时候效果是一样的，一样可以通过这个方法找到环形的入口节点，只不过，index2 指针在环里多转了(n - 1) 圈，然后再遇到 index1，相遇点其实依然是环形的入口节点。
+这就意味着，从头结点 index1 出发一个指针，从相遇节点 index2 也出发一个指针，这两个指针每次只走一个节点，那么当这两个指针相遇的时候就是环形入口的节点。那么 n 如果大于 1 是什么情况呢，就是 fast 指针在环形转 n 圈之后才遇到 slow 指针。其实这种情况和 n 为 1 的时候效果是一样的，一样可以通过这个方法找到环形的入口节点，只不过，index2 指针在环里多转了 (n - 1) 圈，然后再遇到 index1，相遇点其实依然是环形的入口节点。
 
 知道原理之后，其实这道题的代码实现倒是几乎没什么难度。
 

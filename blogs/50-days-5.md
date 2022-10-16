@@ -1,6 +1,6 @@
 ---
 title: '50 天计划第 5 天'
-date: '2022-10-11'
+date: '2022-10-16'
 keywords: ['50 days']
 ---
 
@@ -41,11 +41,11 @@ import bg from '~/assets/5/bg.png'
 
 const BlurryLoadingPage = () => {
   return (
-    <div flex items-center justify-center h-90vh>
-      <div bg-black p-10px relative shadow-gray shadow-sm rounded-2>
-        <img src={bg} alt="" w="70%" object-cover />
+    <div flex items-center justify-center h-60vh>
+      <div bg-black p="x-10px y-30px" relative shadow-gray shadow-sm rounded-2 text-center>
+        <img src={bg} alt="" w="70%" object-cover inline-block />
         <div absolute top="1/2" left="1/2" text="white 4rem" font-bold className="-translate-x-1/2 -translate-y-1/2">
-          99
+          99%
         </div>
       </div>
     </div>
@@ -82,9 +82,9 @@ const BlurryLoadingPage = () => {
   }, [blurring, loadingNum])
 
   return (
-    <div flex items-center justify-center>
-      <div bg-black p-10px relative shadow-gray shadow-sm rounded-2>
-        <img src={bg} alt="" w-500px object-cover />
+    <div flex items-center justify-center h-60vh>
+      <div bg-black p="x-10px y-30px" relative shadow-gray shadow-sm rounded-2 text-center>
+        <img src={bg} alt="" w="70%" object-cover inline-block />
         <div absolute top="1/2" left="1/2" text="white 4rem" font-bold className="-translate-x-1/2 -translate-y-1/2">
           {`${loadingNum}%`}
         </div>
@@ -136,9 +136,9 @@ const BlurryLoadingPage = () => {
   }, [blurring, loadingNum])
 
   return (
-    <div flex items-center justify-center h-90vh>
-      <div bg-black p-10px relative shadow-gray shadow-sm rounded-2>
-        <img src={bg} alt="" w="70%" object-cover ref={backgroundRef} />
+    <div flex items-center justify-center h-60vh>
+      <div bg-black p="x-10px y-30px" relative shadow-gray shadow-sm rounded-2 text-center>
+        <img src={bg} alt="" w="70%" object-cover inline-block ref={backgroundRef} />
         <div absolute top="1/2" left="1/2" text="white 4rem" font-bold className="-translate-x-1/2 -translate-y-1/2" ref={loadingNumRef}>
           {`${loadingNum}%`}
         </div>

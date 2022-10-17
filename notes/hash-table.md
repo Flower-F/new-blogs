@@ -84,7 +84,7 @@ function isHappy(n: number): boolean {
 }
 ```
 
-但是这道题其实还有其他的解法。现在我们的时间复杂度是 `O(N)`，因为我们用了一个哈希表。其实这道题是可以在 `O(1)` 空间内求解的，用的是双指针解法。
+但是这道题其实还有其他的解法。现在我们的时间复杂度是 `O(N)`，因为我们用了一个哈希表。其实这道题是可以在 `O(1)` 空间内求解的，用的是快慢指针的解法。快指针每次走两步，慢指针每次走一步，当二者相等时，即为一个循环周期。此时，判断是不是因为 1 引起的循环，是的话就是快乐数，否则不是快乐数。
 
 ```ts
 function isHappy(n: number): boolean {
@@ -102,6 +102,23 @@ function isHappy(n: number): boolean {
       n = Math.floor(n / 10)
     }
     return sum
+  }
+}
+```
+
+## [两数之和](https://leetcode.cn/problems/two-sum/)
+
+经典第一题，没什么好说的。
+
+```ts
+function twoSum(nums: number[], target: number): number[] {
+  const record = new Map()
+  for (let i = 0; i < nums.length; i++) {
+    const another = target - nums[i]
+    if (record.has(another)) {
+      return [i, record.get(another)]
+    }
+    record.set(nums[i], i)
   }
 }
 ```

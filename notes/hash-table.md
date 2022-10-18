@@ -6,7 +6,7 @@ keywords: ['Data Structure']
 
 ## [有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)
 
-这题基本上没什么太大难度，直接写就行了
+这题基本上没什么太大难度，直接写就行了。
 
 ```ts
 function isAnagram(s: string, t: string): boolean {
@@ -112,7 +112,7 @@ function isHappy(n: number): boolean {
 
 ```ts
 function twoSum(nums: number[], target: number): number[] {
-  const record = new Map()
+  const record = new Map<number, number>()
   for (let i = 0; i < nums.length; i++) {
     const another = target - nums[i]
     if (record.has(another)) {
@@ -120,5 +120,59 @@ function twoSum(nums: number[], target: number): number[] {
     }
     record.set(nums[i], i)
   }
+}
+```
+
+## [四数相加 II](https://leetcode.cn/problems/4sum-ii/)
+
+为什么这道题可以使用哈希表求解，但是三数之和和四数之和不行呢？这是因为这道题对应的是四个独立的数组，而三数之和和四数之和都是对于单个数组求解的。这一点必须要注意。
+
+我们可以先求解 a + b 的结果，然后存储到数组中。注意这里 value 要存储计算结果的个数，因为这里对应着的是不同的解，都是要计算进去的。再用这个数组中的每一项来判断是否存在能够满足 a + b + c + d = 0 的解。
+
+```ts
+function fourSumCount(nums1: number[], nums2: number[], nums3: number[], nums4: number[]): number {
+  const record = new Map<number, number>()
+  for (let i = 0; i < nums1.length; i++) {
+    for (let j = 0; j < nums2.length; j++) {
+      const sum = nums1[i] + nums2[j]
+      record.set(sum, (record.get(sum) || 0) + 1)
+    }
+  }
+
+  let res =  0
+  for (let i = 0; i < nums3.length; i++) {
+    for (let j = 0; j < nums4.length; j++) {
+      const sum = nums3[i] + nums4[j]
+      if (record.has(-sum)) {
+        res += record.get(-sum)
+      }
+    }
+  }
+
+  return res
+}
+```
+
+## [赎金信](https://leetcode.cn/problems/ransom-note/)
+
+这道题与有效的字母异位词一题解法基本完全相同，不多做解释。
+
+```ts
+function canConstruct(ransomNote: string, magazine: string): boolean {
+  const record = new Map<string, number>()
+
+  for (const ch of magazine) {
+    record.set(ch, (record.get(ch) || 0) + 1)
+  }
+
+  for (const ch of ransomNote) {
+    if (record.has(ch) && record.get(ch) > 0) {
+      record.set(ch, record.get(ch) - 1)
+    } else {
+      return false
+    }
+  }
+
+  return true
 }
 ```

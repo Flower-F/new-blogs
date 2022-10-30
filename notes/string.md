@@ -145,3 +145,7 @@ function reverseLeftWords(s: string, n: number): string {
   }
 }
 ```
+
+## [实现 strStr](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+
+本题是 KMP 经典题目。
